@@ -26,11 +26,12 @@ class LinebotsController < ApplicationController
       when Line::Bot::Event::Message
         case event.type
         when Line::Bot::Event::MessageType::Text
-          # TestモデルにCreateし、DBからLine返信
-          @test = Test.find_by(content: event.message['text'])
+          # PostモデルにCreateし、DBからLine返信
+          @post = Post.find_by(title: event.message['text'])
+          @post = Post.first
           message = {
             type: 'text',
-            text: @test.content
+            text: @post.content
           }
           client.reply_message(event['replyToken'], message)
         end
