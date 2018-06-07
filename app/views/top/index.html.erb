@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<h1>TopPage</h1>
+<br>
+<h2>Line Bot管理用ページ</h2>
+<% if Rails.env.development? %>
+  <p>ローカルでは確認用ページはありません</p>
+  <p>Herokuでのページで確認してください</p>
+<% end %>
+
+<!-- リンク一覧 -->
+<h3><%= link_to 'Test', tests_path %></h3>
+<h3><%= link_to 'Post', posts_path %></h3>
