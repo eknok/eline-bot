@@ -7,8 +7,7 @@
 中途半端な実装が現在施されてます。悪しからず。  
 詳しくは6/7の`line-base`のプルリクへ  
 
-# Heroku
-
+## Heroku
 https://eline-bot.herokuapp.com/
 `/posts`から新規作成して返信内容を作成編集できます
 
@@ -16,6 +15,8 @@ https://eline-bot.herokuapp.com/
 無料枠で行なっているので合計1000件しか返せません。（連打はやめてください）  
 またHerokuも無料枠で機嫌が悪いので起きるまでに時間がかかる可能性あり  
 
+### 公式LINE
+https://developers.line.me/ja/
 
 ### 使用Gem
 
