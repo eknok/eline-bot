@@ -27,7 +27,7 @@ class LinebotsController < ApplicationController
         case event.type
         when Line::Bot::Event::MessageType::Text
           # TestモデルにCreateし、DBからLine返信
-          @test = Test.create(content: event.message['text'])
+          @test = Test.find_by(content: event.message['text'])
           message = {
             type: 'text',
             text: @test.content
