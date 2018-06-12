@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :hoges
   resources :posts
   root to: 'top#index'
 
