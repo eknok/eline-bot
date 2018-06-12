@@ -26,13 +26,15 @@ class LinebotsController < ApplicationController
       when Line::Bot::Event::Message
         case event.type
         when Line::Bot::Event::MessageType::Text
-          # PostモデルにCreateし、DBからLine返信
-          @post = Post.find_by(title: event.message['text'])
-          # 引っかからない場合
-          @post = Post.find_by(title: 'エラーメッセージ') if @post.nil?
+          # # PostモデルにCreateし、DBからLine返信
+          # @post = Post.find_by(title: event.message['text'])
+          # # 引っかからない場合
+          # @post = Post.find_by(title: 'エラーメッセージ') if @post.nil?
+          @hoge = Hoge.find_by(title: event.message['text'])
+          @hoge = Hoge.find_by(title: 'エラーメッセージ') if @hoge.nil?
           message = {
             type: 'text',
-            text: @post.content
+            text: @hoge.content
           }
           client.reply_message(event['replyToken'], message)
         end
